@@ -17,6 +17,7 @@ namespace Lexicon_övning5
             Console.WriteLine("6. Ta bort fordon ur garaget");
 
             Console.WriteLine("4. Hitta ett specifikt fordon via registreringsnumret.");
+            Console.WriteLine("4. Sök efter fordon utifrån en eller flera egenskaper.");
 
             Console.WriteLine("5. Avsluta");
         }
