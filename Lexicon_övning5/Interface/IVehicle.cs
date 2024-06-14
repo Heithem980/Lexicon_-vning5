@@ -6,6 +6,14 @@
         string Color { get; set; }
         int NumberOfWheels { get; set; }
 
+        int weightKG { get; set; }
+
+        int maxSpeed { get; set; }
+
+
+
+
+
 
     }
 }
