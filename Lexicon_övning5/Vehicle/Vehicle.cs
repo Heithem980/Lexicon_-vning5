@@ -8,9 +8,9 @@ namespace Lexicon_övning5.Vehicle
         public string Color { get; set; }
         public int NumberOfWheels { get; set; }
 
-        public int weightKG { get; set; }
+        public int WeightKG { get; set; }
 
-        public int maxSpeed { get; set; }
+        public int MaxSpeed { get; set; }
 
 
 
@@ -19,8 +19,8 @@ namespace Lexicon_övning5.Vehicle
             RegistrationNumber = registrationNumber;
             Color = color;
             NumberOfWheels = numberOfWheels;
-            this.weightKG = weightKG;
-            this.maxSpeed = maxSpeed;
+            this.WeightKG = weightKG;
+            this.MaxSpeed = maxSpeed;
         }
     }
 }
