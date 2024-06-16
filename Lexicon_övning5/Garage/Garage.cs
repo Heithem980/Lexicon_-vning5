@@ -12,7 +12,12 @@ namespace Lexicon_övning5.Garage
         private int count;
 
 
-
+        public Garage(int capacity)
+        {
+            this.capacity = capacity;
+            vehicles = new T[capacity];
+            count = 0;
+        }
 
 
 
