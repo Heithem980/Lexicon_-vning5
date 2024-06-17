@@ -6,6 +6,9 @@ namespace Lexicon_övning5
     internal class ConsoleUI : IUI
     {
 
+        private GarageHandler? handler;
+
+
 
         public void NewGarage()
         {
@@ -17,9 +20,9 @@ namespace Lexicon_övning5
 
             if (IsValidInteger(input, out int parsedValue))
             {
-                GarageHandler garageHandler = new GarageHandler(parsedValue);
+                handler = new GarageHandler(parsedValue);
 
-
+                Console.WriteLine($"Garage skapat med {parsedValue} platser.");
 
 
             }

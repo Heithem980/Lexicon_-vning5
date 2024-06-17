@@ -2,19 +2,46 @@
 
 namespace Lexicon_övning5.Garage
 {
-    internal class GarageHandler
+    internal class GarageHandler : IHandler
     {
 
-        IVehicle vehicles;
 
-        public GarageHandler(int parsedValue)
+        private Garage<IVehicle> garage;
+
+
+
+
+        public GarageHandler(int capacity)
         {
-            //Garage = new Gararge<>
+            garage = new Garage<IVehicle>(capacity);
         }
 
-        public void CreateGararge()
+
+
+
+        bool IHandler.AddVehicle(IVehicle vehicle)
         {
 
+
+            return garage.AddVehicle(vehicle);
         }
+
+
+        /*
+        bool IHandler.RemoveVehicle(string registrationNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        IVehicle IHandler.FindVehicle(string registrationNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<IVehicle> IHandler.ListVehicles()
+        {
+            throw new NotImplementedException();
+        }
+        */
     }
 }

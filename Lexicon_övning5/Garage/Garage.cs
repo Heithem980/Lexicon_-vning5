@@ -33,6 +33,12 @@ namespace Lexicon_övning5.Garage
 
 
 
+        public bool AddVehicle(T vehicle)
+        {
+
+
+            throw new NotImplementedException();
+        }
 
 
         public T FindVehicle(string registrationNumber)
