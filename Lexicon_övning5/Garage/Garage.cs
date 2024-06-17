@@ -7,9 +7,9 @@ namespace Lexicon_övning5.Garage
     {
 
 
-        private T[] vehicles;
-        private int capacity;
-        private int count;
+        private T[] vehicles; // Array för att lagra fordon
+        private int capacity; // Max kapacitet för garaget
+        private int count; // Nuvarande antal fordon i garaget
 
 
         public Garage(int capacity)
@@ -35,9 +35,23 @@ namespace Lexicon_övning5.Garage
 
         public bool AddVehicle(T vehicle)
         {
+            if (vehicles.Length < capacity)
+            {
+                vehicles[count] = vehicle; // Lägg till fordonet i arrayen
+                count++;
+
+                Console.WriteLine($"Vehicle succesfully added to garage in place {count}. Max capacity: {capacity}");
+                return true;
+            }
+            else
+            {
+
+                Console.WriteLine($"Could not add vehicle. Garage full!");
+                return false;
+            }
 
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 

@@ -19,7 +19,7 @@ namespace Lexicon_övning5.Garage
 
 
 
-        bool IHandler.AddVehicle(IVehicle vehicle)
+        public bool AddVehicle(IVehicle vehicle)
         {
 
 
