@@ -9,5 +9,11 @@
         {
             _numberOfSeats = numberOfSeats;
         }
+
+
+        public override string ToString()
+        {
+            return $"Reg: {RegistrationNumber}, Color: {Color}, Wheels: {NumberOfWheels}, Weight: {WeightKG}kg, MaxSpeed: {MaxSpeed}km/h, NumberOfSeats: {_numberOfSeats}";
+        }
     }
 }

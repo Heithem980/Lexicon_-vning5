@@ -11,7 +11,10 @@
             _length = length;
         }
 
-
+        public override string ToString()
+        {
+            return $"Reg: {RegistrationNumber}, Color: {Color}, Wheels: {NumberOfWheels}, Weight: {WeightKG}kg, MaxSpeed: {MaxSpeed}km/h, Length: {_length}";
+        }
 
     }
 }
