@@ -1,5 +1,6 @@
 ﻿using Lexicon_övning5.Garage;
 using Lexicon_övning5.Interface;
+using Lexicon_övning5.Vehicle;
 
 namespace Lexicon_övning5
 {
@@ -47,31 +48,88 @@ namespace Lexicon_övning5
 
             char input = GetUserInput()[0];
 
+            // Collecting vehicle details
+            Console.WriteLine("Enter Registration Number:");
+            string regNumber = GetUserInput();
+            Console.WriteLine("Enter Color:");
+            string color = GetUserInput();
+            Console.WriteLine("Enter Number of Wheels:");
+            int wheels = int.Parse(GetUserInput());
+            Console.WriteLine("Enter Weight in KG:");
+            int weight = int.Parse(GetUserInput());
+            Console.WriteLine("Enter Max Speed:");
+            int maxSpeed = int.Parse(GetUserInput());
+
+
+            IVehicle vehicle = null;
 
             switch (input)
             {
                 case '1':
-
+                    Console.WriteLine("Enter Number of Engines:");
+                    int engines = int.Parse(GetUserInput());
+                    vehicle = new Airplane(regNumber, color, wheels, weight, maxSpeed, engines);
                     break;
+
                 case '2':
-
+                    Console.WriteLine("Enter Length:");
+                    double length = double.Parse(GetUserInput());
+                    vehicle = new Boat(regNumber, color, wheels, weight, maxSpeed, length);
                     break;
-                case '3':
 
+                case '3':
+                    Console.WriteLine("Enter Number of Seats:");
+                    int seats = int.Parse(GetUserInput());
+                    vehicle = new Bus(regNumber, color, wheels, weight, maxSpeed, seats);
                     break;
                 case '4':
-
+                    Console.WriteLine("Enter Fuel Type:");
+                    string fuelType = GetUserInput();
+                    vehicle = new Car(regNumber, color, wheels, weight, maxSpeed, fuelType);
                     break;
 
                 case '5':
-
+                    Console.WriteLine("Enter Cylinder Volume:");
+                    int cylinderVolume = int.Parse(GetUserInput());
+                    vehicle = new Motorcycle(regNumber, color, wheels, weight, maxSpeed, cylinderVolume);
                     break;
+
                 default:
                     Console.WriteLine("Please enter some valid input (0, 1, 2, 3, 4)");
                     break;
             }
+            if (vehicle != null)
+            {
+                if (handler.AddVehicle(vehicle))
+                {
+                    Console.WriteLine("Vehicle added successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("Failed to add vehicle.");
+                }
+            }
+
+        }
 
 
+
+
+        public void FindVehicle()
+        {
+            Console.WriteLine("Enter the registration number of the vehicle to find:");
+            string regNumber = GetUserInput();
+            var vehicle = handler.FindVehicle(regNumber);
+
+
+            if (vehicle != null)
+            {
+                Console.WriteLine($"Vehicle found: {vehicle.ToString()}");
+            }
+            else
+            {
+                Console.WriteLine("Vehicle not found.");
+            }
         }
 
 

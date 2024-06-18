@@ -43,7 +43,15 @@
                     case '4':
                         consoleUI.AddVehicle();
                         break;
+                    case '5':
 
+                        break;
+                    case '6':
+                        consoleUI.FindVehicle();
+                        break;
+                    case '7':
+
+                        break;
                     case '0':
                         Environment.Exit(0);
                         break;

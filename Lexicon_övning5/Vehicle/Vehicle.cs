@@ -22,5 +22,12 @@ namespace Lexicon_övning5.Vehicle
             this.WeightKG = weightKG;
             this.MaxSpeed = maxSpeed;
         }
+
+
+        public override string ToString()
+        {
+            return $"Reg: {RegistrationNumber}, Color: {Color}, Wheels: {NumberOfWheels}, Weight: {WeightKG}kg, MaxSpeed: {MaxSpeed}km/h";
+        }
+
     }
 }

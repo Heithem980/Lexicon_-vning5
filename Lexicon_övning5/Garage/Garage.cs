@@ -35,7 +35,7 @@ namespace Lexicon_övning5.Garage
 
         public bool AddVehicle(T vehicle)
         {
-            if (vehicles.Length < capacity)
+            if (count < capacity)
             {
                 vehicles[count] = vehicle; // Lägg till fordonet i arrayen
                 count++;
@@ -59,7 +59,7 @@ namespace Lexicon_övning5.Garage
         {
             for (int i = 0; i < count; i++)
             {
-                if (vehicles[i].RegistrationNumber == registrationNumber)
+                if (vehicles[i].RegistrationNumber.Equals(registrationNumber, StringComparison.OrdinalIgnoreCase))
                 {
                     return vehicles[i];
                 }

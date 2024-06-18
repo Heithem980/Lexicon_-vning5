@@ -9,5 +9,10 @@
         {
             _fuelType = fuelType;
         }
+
+        public override string ToString()
+        {
+            return $"Reg: {RegistrationNumber}, Color: {Color}, Wheels: {NumberOfWheels}, Weight: {WeightKG}kg, MaxSpeed: {MaxSpeed}km/h, FuelType: {_fuelType}";
+        }
     }
 }

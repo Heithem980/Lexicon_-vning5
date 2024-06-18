@@ -26,6 +26,13 @@ namespace Lexicon_övning5.Garage
             return garage.AddVehicle(vehicle);
         }
 
+        public IVehicle FindVehicle(string registrationNumber)
+        {
+
+            return garage.FindVehicle(registrationNumber);
+            throw new NotImplementedException();
+        }
+
 
         /*
         bool IHandler.RemoveVehicle(string registrationNumber)
@@ -33,10 +40,7 @@ namespace Lexicon_övning5.Garage
             throw new NotImplementedException();
         }
 
-        IVehicle IHandler.FindVehicle(string registrationNumber)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         IEnumerable<IVehicle> IHandler.ListVehicles()
         {
