@@ -30,22 +30,25 @@ namespace Lexicon_övning5.Garage
         {
 
             return garage.FindVehicle(registrationNumber);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 
-        /*
-        bool IHandler.RemoveVehicle(string registrationNumber)
+
+        public bool RemoveVehicle(string registrationNumber)
         {
-            throw new NotImplementedException();
+            return garage.RemoveVehicle(registrationNumber);
         }
 
-        
-
-        IEnumerable<IVehicle> IHandler.ListVehicles()
+        public IEnumerable<IVehicle> ListVehicles()
         {
-            throw new NotImplementedException();
+            return garage.ToArray();
         }
-        */
+
+        public bool GetGarageCapacity()
+        {
+
+            return garage.GetCapacity() >= 5;
+        }
     }
 }

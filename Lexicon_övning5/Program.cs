@@ -9,9 +9,7 @@
         {
             //Console.WriteLine("Hello, World!");
 
-            //GarageHandler garageHandler = new GarageHandler();
 
-            //bool running = true;
 
             ConsoleUI consoleUI = new ConsoleUI();
 
@@ -32,10 +30,10 @@
                 switch (input)
                 {
                     case '1':
-
+                        consoleUI.PopulateGarage();
                         break;
                     case '2':
-
+                        consoleUI.ListAllVehicles();
                         break;
                     case '3':
 
@@ -44,13 +42,16 @@
                         consoleUI.AddVehicle();
                         break;
                     case '5':
-
+                        consoleUI.RemoveVehicle();
                         break;
                     case '6':
                         consoleUI.FindVehicle();
                         break;
                     case '7':
 
+                        break;
+                    case '8':
+                        consoleUI.NewGarage();
                         break;
                     case '0':
                         Environment.Exit(0);
@@ -60,7 +61,7 @@
                         break;
                 }
 
-
+                //Console.Clear();
             }
 
         }

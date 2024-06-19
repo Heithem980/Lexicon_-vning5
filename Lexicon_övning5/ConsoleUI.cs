@@ -112,8 +112,19 @@ namespace Lexicon_övning5
 
         }
 
-
-
+        public void RemoveVehicle()
+        {
+            Console.WriteLine("Enter the registration number of the vehicle to remove:");
+            string regNumber = GetUserInput();
+            if (handler.RemoveVehicle(regNumber))
+            {
+                Console.WriteLine("Vehicle removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Vehicle not found.");
+            }
+        }
 
         public void FindVehicle()
         {
@@ -132,6 +143,44 @@ namespace Lexicon_övning5
             }
         }
 
+        public void ListAllVehicles()
+        {
+            IEnumerable<IVehicle> vehicles = handler.ListVehicles();
+
+            if (vehicles.Any())
+            {
+                foreach (var vehicle in vehicles)
+                {
+                    Console.WriteLine(vehicle.ToString()); // Print details of each vehicle
+                }
+            }
+            else
+            {
+                Console.WriteLine("No vehicles found in the garage.");
+            }
+        }
+
+        public void PopulateGarage()
+        {
+            if (handler != null && handler.GetGarageCapacity())
+            {
+                handler.AddVehicle(new Car("CAR123", "Red", 4, 1500, 200, "Petrol"));
+                handler.AddVehicle(new Motorcycle("MOTO456", "Blue", 2, 200, 180, 600));
+                handler.AddVehicle(new Bus("BUS789", "Yellow", 6, 5000, 100, 50));
+                handler.AddVehicle(new Boat("BOAT012", "White", 0, 3000, 40, 25.5));
+                handler.AddVehicle(new Airplane("AIR345", "Silver", 8, 18000, 900, 4));
+
+                Console.WriteLine("Garage populated with a few vehicles.");
+            }
+            else
+            {
+                Console.WriteLine("Please create a garage first with a minimum of '5' total capacity.");
+            }
+        }
+
+
+
+
 
         public void DisplayMenu()
         {
@@ -145,6 +194,8 @@ namespace Lexicon_övning5
 
             Console.WriteLine("6. Hitta ett specifikt fordon via registreringsnumret.");
             Console.WriteLine("7. Sök efter fordon utifrån en eller flera egenskaper.");
+
+            Console.WriteLine("8. Skapa nytt Garage.");
 
             Console.WriteLine("0. Avsluta?\n");
 

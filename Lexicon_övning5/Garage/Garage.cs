@@ -8,7 +8,8 @@ namespace Lexicon_övning5.Garage
 
 
         private T[] vehicles; // Array för att lagra fordon
-        private int capacity; // Max kapacitet för garaget
+        private int capacity;   // Max kapacitet för garaget
+
         private int count; // Nuvarande antal fordon i garaget
 
 
@@ -54,6 +55,22 @@ namespace Lexicon_övning5.Garage
             //throw new NotImplementedException();
         }
 
+        public bool RemoveVehicle(string registrationNumber)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (vehicles[i].RegistrationNumber.Equals(registrationNumber, StringComparison.OrdinalIgnoreCase))
+                {
+                    vehicles[i] = vehicles[--count];
+                    vehicles[count] = default(T);
+                    Console.WriteLine("Vehicle removed successfully.");
+                    return true;
+                }
+            }
+            Console.WriteLine("Vehicle not found.");
+            return false;
+        }
+
 
         public T FindVehicle(string registrationNumber)
         {
@@ -66,5 +83,21 @@ namespace Lexicon_övning5.Garage
             }
             return default(T);
         }
+
+        public T[] ToArray()
+        {
+            T[] array = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                array[i] = vehicles[i];
+            }
+            return array;
+        }
+
+        public int GetCapacity()
+        {
+            return capacity;
+        }
+
     }
 }
