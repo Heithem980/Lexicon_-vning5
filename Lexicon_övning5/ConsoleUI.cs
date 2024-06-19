@@ -178,7 +178,17 @@ namespace Lexicon_övning5
             }
         }
 
+        public void ListVehicleTypes()
+        {
+            var vehicles = handler.ListVehicles();
+            var vehicleTypes = vehicles.GroupBy(v => v.GetType().Name)
+                                       .Select(group => new { Type = group.Key, Count = group.Count() });
 
+            foreach (var vehicleType in vehicleTypes)
+            {
+                Console.WriteLine($"{vehicleType.Type}: {vehicleType.Count}");
+            }
+        }
 
 
 
@@ -231,5 +241,10 @@ namespace Lexicon_övning5
         }
 
 
+
+        internal void SearchVehiclesByProperties()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

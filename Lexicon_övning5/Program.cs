@@ -36,7 +36,7 @@
                         consoleUI.ListAllVehicles();
                         break;
                     case '3':
-
+                        consoleUI.ListVehicleTypes();
                         break;
                     case '4':
                         consoleUI.AddVehicle();
@@ -48,7 +48,7 @@
                         consoleUI.FindVehicle();
                         break;
                     case '7':
-
+                        consoleUI.SearchVehiclesByProperties();
                         break;
                     case '8':
                         consoleUI.NewGarage();
