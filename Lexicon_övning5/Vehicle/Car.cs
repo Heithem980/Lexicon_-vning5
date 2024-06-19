@@ -1,6 +1,6 @@
 ﻿namespace Lexicon_övning5.Vehicle
 {
-    internal class Car : Vehicle
+    public class Car : Vehicle
     {
         private string _fuelType;
 

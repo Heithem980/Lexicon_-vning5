@@ -2,7 +2,7 @@
 
 namespace Lexicon_övning5.Vehicle
 {
-    internal abstract class Vehicle : IVehicle
+    public abstract class Vehicle : IVehicle
     {
         public string RegistrationNumber { get; set; }
         public string Color { get; set; }

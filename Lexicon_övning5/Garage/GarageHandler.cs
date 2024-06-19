@@ -45,6 +45,17 @@ namespace Lexicon_övning5.Garage
             return garage.ToArray();
         }
 
+        public IEnumerable<IVehicle> SearchVehicles(string registrationNumber, string color, int numberOfWheels, int weightKG, int maxSpeed)
+        {
+            return garage.Where(vehicle =>
+                (string.IsNullOrEmpty(registrationNumber) || vehicle.RegistrationNumber.Equals(registrationNumber, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(color) || vehicle.Color.Equals(color, StringComparison.OrdinalIgnoreCase)) &&
+                (numberOfWheels == 0 || vehicle.NumberOfWheels == numberOfWheels) &&
+                (weightKG == 0 || vehicle.WeightKG == weightKG) &&
+                (maxSpeed == 0 || vehicle.MaxSpeed == maxSpeed)
+            );
+        }
+
         public bool GetGarageCapacity()
         {
 

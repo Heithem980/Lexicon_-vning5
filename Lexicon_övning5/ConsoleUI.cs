@@ -242,9 +242,42 @@ namespace Lexicon_övning5
 
 
 
-        internal void SearchVehiclesByProperties()
+        public void SearchVehiclesByProperties()
         {
-            throw new NotImplementedException();
+            if (handler != null)
+            {
+                Console.WriteLine("Enter search criteria (leave blank to ignore a criterion):");
+
+                Console.Write("Registration Number: ");
+                string registrationNumber = GetUserInput();
+
+                Console.Write("Color: ");
+                string color = GetUserInput();
+
+                Console.Write("Number of Wheels: ");
+                string numberOfWheelsInput = GetUserInput();
+                int.TryParse(numberOfWheelsInput, out int numberOfWheels);
+
+                Console.Write("Weight (KG): ");
+                string weightInput = GetUserInput();
+                int.TryParse(weightInput, out int weightKG);
+
+                Console.Write("Max Speed: ");
+                string maxSpeedInput = GetUserInput();
+                int.TryParse(maxSpeedInput, out int maxSpeed);
+
+                var results = handler.SearchVehicles(registrationNumber, color, numberOfWheels, weightKG, maxSpeed);
+
+                Console.WriteLine("Search Results:");
+                foreach (var vehicle in results)
+                {
+                    Console.WriteLine(vehicle.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please create a garage first.");
+            }
         }
     }
 }

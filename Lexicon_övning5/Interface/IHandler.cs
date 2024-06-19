@@ -5,12 +5,12 @@
         bool AddVehicle(IVehicle vehicle);
 
 
-        /*
+
         bool RemoveVehicle(string registrationNumber);
         IVehicle FindVehicle(string registrationNumber);
         IEnumerable<IVehicle> ListVehicles();
 
-        */
+
 
         //void CreateGarage();
     }

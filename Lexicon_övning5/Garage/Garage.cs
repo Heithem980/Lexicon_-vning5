@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Lexicon_övning5.Garage
 {
-    internal class Garage<T> : IEnumerable<T> where T : IVehicle
+    public class Garage<T> : IEnumerable<T> where T : IVehicle
     {
 
 
@@ -24,12 +24,15 @@ namespace Lexicon_övning5.Garage
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < count; i++)
+            {
+                yield return vehicles[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
 
 
