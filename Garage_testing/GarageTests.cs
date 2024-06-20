@@ -36,15 +36,56 @@ namespace Garage_testing
             // Arrange
             for (int i = 0; i < 5; i++)
             {
-                _garage.AddVehicle(new Car($"ABC12{i}", "Red", 4, 1500, 200, "Petrol"));
+                _garage.AddVehicle(new Car($"JFC12{i}", "Red", 4, 1500, 200, "Petrol"));
             }
-            var extraCar = new Car("EXTRA1", "Blue", 4, 1500, 200, "Petrol");
+            var extraCar = new Car("TLM556", "Blue", 4, 1500, 200, "Petrol");
 
             // Act
             var result = _garage.AddVehicle(extraCar);
 
             // Assert
             Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void RemoveVehicle_VehicleExists_ReturnsTrue()
+        {
+            // Arrange
+            var car = new Car("ABC123", "Red", 4, 1500, 200, "Petrol");
+            _garage.AddVehicle(car);
+
+            // Act
+            var result = _garage.RemoveVehicle(car.RegistrationNumber);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void RemoveVehicle_VehicleDoesNotExist_ReturnsFalse()
+        {
+            // Arrange
+            var car = new Car("ABC123", "Red", 4, 1500, 200, "Petrol");
+
+            // Act
+            var result = _garage.RemoveVehicle(car.RegistrationNumber);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void FindVehicle_VehicleExists_ReturnsVehicle()
+        {
+            // Arrange
+            var car = new Car("ABC123", "Red", 4, 1500, 200, "Petrol");
+            _garage.AddVehicle(car);
+
+            // Act
+            var result = _garage.FindVehicle("ABC123");
+
+            // Assert
+            Assert.That(result, Is.EqualTo(car));
         }
 
 

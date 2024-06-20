@@ -190,58 +190,6 @@ namespace Lexicon_övning5
             }
         }
 
-
-
-        public void DisplayMenu()
-        {
-            Console.WriteLine("1. Populera garaget med ett antal fordon");
-
-            Console.WriteLine("2. Lista samtliga parkerade fordon");
-            Console.WriteLine("3. Lista fordonstyper och hur många av varje som står i garaget");
-
-            Console.WriteLine("4. Lägga till fordon i garaget");
-            Console.WriteLine("5. Ta bort fordon ur garaget");
-
-            Console.WriteLine("6. Hitta ett specifikt fordon via registreringsnumret.");
-            Console.WriteLine("7. Sök efter fordon utifrån en eller flera egenskaper.");
-
-            Console.WriteLine("8. Skapa nytt Garage.");
-
-            Console.WriteLine("0. Avsluta?\n");
-
-
-            Console.WriteLine("Välj ett alternativ: ");
-        }
-
-        public string GetUserInput()
-        {
-
-            return Console.ReadLine()!;
-        }
-
-
-
-        public void ShowMessage(string message)
-        {
-
-        }
-
-
-        public bool IsValidInteger(string input, out int result)
-        {
-            // check if the input is not null, empty, or white-space only
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                result = 0;
-                return false;
-            }
-
-            // try to parse the input as an integer
-            return int.TryParse(input, out result);
-        }
-
-
-
         public void SearchVehiclesByProperties()
         {
             if (handler != null)
@@ -279,5 +227,51 @@ namespace Lexicon_övning5
                 Console.WriteLine("Please create a garage first.");
             }
         }
+
+
+
+        public void DisplayMenu()
+        {
+            Console.WriteLine("1. Populera garaget med ett antal fordon");
+
+            Console.WriteLine("2. Lista samtliga parkerade fordon");
+            Console.WriteLine("3. Lista fordonstyper och hur många av varje som står i garaget");
+
+            Console.WriteLine("4. Lägga till fordon i garaget");
+            Console.WriteLine("5. Ta bort fordon ur garaget");
+
+            Console.WriteLine("6. Hitta ett specifikt fordon via registreringsnumret.");
+            Console.WriteLine("7. Sök efter fordon utifrån en eller flera egenskaper.");
+
+            Console.WriteLine("8. Skapa nytt Garage.");
+
+            Console.WriteLine("0. Avsluta?\n");
+
+
+            Console.WriteLine("Välj ett alternativ: ");
+        }
+
+        public string GetUserInput()
+        {
+
+            return Console.ReadLine()!;
+        }
+
+        public bool IsValidInteger(string input, out int result)
+        {
+            // check if the input is not null, empty, or white-space only
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                result = 0;
+                return false;
+            }
+
+            // try to parse the input as an integer
+            return int.TryParse(input, out result);
+        }
+
+
+
+
     }
 }

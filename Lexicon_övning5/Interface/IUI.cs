@@ -5,7 +5,7 @@
         void DisplayMenu();
         string GetUserInput();
 
-        void ShowMessage(string message);
+
 
     }
 }
